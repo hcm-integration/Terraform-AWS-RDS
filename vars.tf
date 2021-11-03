@@ -1,97 +1,40 @@
-variable "keyPath" {
-  default = "~/cloud-remote-aws.pem"
+variable "identifier"{
+ default = "db-identifier"
 }
 
-variable "i" {
-  default = 0
-}
-variable "v" {
-  default = 0
-}
-variable "niccount" {
-  default = 0
-}
-variable "p" {
-  default = 0
+variable "skip_final_snapshot"{
+ default = "true"
 }
 
-##########################################################################
-variable "instancecount" {
-  description = "Enter number of vm to deploy"
+variable "storage" {
+  default = "5"
 }
 
-##########################################################################
-
-variable "name" {
-  description = "Enter name of VM"
+variable "engine" {
+  default = "mysql"
 }
 
-##########################################################################
-/*
-variable "image" {
-  description = "Enter Image centos or windows"
-  validation {
-    condition     = var.image == "centos" || var.image == "windows"
-    error_message = "Please Enter 'windows' or 'centos'!"
-  }
+variable "engver" {
+  default = "5.7"
 }
 
-variable "os" {
-  type = map(any)
-  default = {
-    "centos"  = "centos7_07"
-    "windows" = "win12server2"
-  }
-}
-*/
-##########################################################################
-
-variable "size" {
-  description = "Enter Size small, medium,large"
-  validation {
-    condition     = contains(["small", "medium", "large"], var.size)
-    error_message = "Please enter micro, small or large!"
-  }
+variable "dbsize" {
+  default = "db.t3.micro"
 }
 
-variable "flavor" {
-  type = map(any)
-  default = {
-    "small"  = "m1.small"
-    "medium" = "m1.medium"
-    "large"  = "m1.large"
-  }
+variable "dbname" {
+  default = "testdbname"
 }
 
-##########################################################################
-variable "network" {
-  default = "l2p_SE04-SOL-INT-DB"
+
+variable "dbusername" {
+  default = "Testing"
 }
 
-##########################################################################
-variable "az" {
-  default = "ASH-SE4-101"
+variable "dbpswd" {
+  default = "tiger12345"
 }
 
-##########################################################################
-variable "volcount" {
-  default = 1
+variable "pgn" {
+  default = "default.mysql5.7"
 }
-variable "volsize" {
-  default = "1"
-}
-
-##########################################################################
-variable "powerstate" {
-  default = "active"
-}
-
-##########################################################################
-variable "devicename" {
-  type = map(any)
-  default = {
-    "centos"  = "/dev/sdh"
-    "windows" = "xvdh"
-  }
-}
-##########################################################################
