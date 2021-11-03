@@ -23,12 +23,12 @@ variable "dbsize" {
 }
 
 variable "dbname" {
-  default = "testdbname"
+  default = "dbname"
 }
 
 
 variable "dbusername" {
-  default = "Testing"
+  default = "dbusername"
 }
 
 variable "dbpswd" {
@@ -37,4 +37,8 @@ variable "dbpswd" {
 
 variable "pgn" {
   default = "default.mysql5.7"
+}
+
+variable "status"{
+  default = "available"
 }
