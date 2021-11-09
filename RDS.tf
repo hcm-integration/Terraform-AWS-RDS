@@ -10,5 +10,5 @@ resource "aws_db_instance" "rds" {
   password          = var.dbpswd
   #parameter_group_name = "default.mysql5.7"
   skip_final_snapshot  = true
-  status               = var.status
+  #status               = var.status
 }
