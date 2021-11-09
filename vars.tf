@@ -1,3 +1,7 @@
+variable "apply_immediately"{
+ default = "true"
+}
+
 variable "identifier"{
  default = "db-identifier"
 }
